@@ -11,7 +11,7 @@ import postscribe from 'postscribe';
 export class CityComponent implements OnInit {
 
   api = '730a4f921d9336f2c6284ae5cadcba88';
-
+  units = 'metric';
   @Input()
   city;
 
@@ -62,7 +62,7 @@ export class CityComponent implements OnInit {
     this.expanded = !this.expanded;
     if (this.expanded) {
       const ajax = new XMLHttpRequest();
-      ajax.open('GET', 'https://api.openweathermap.org/data/2.5/forecast?q=' + this.city.name + '&appid=' + this.api, false);
+      ajax.open('GET', 'https://api.openweathermap.org/data/2.5/forecast?q=' + this.city.name + '&units=' + this.units + '&appid=' + this.api, false);
       ajax.send();
       this.fiveDay = [];
       this.forecast = JSON.parse(ajax.responseText);
