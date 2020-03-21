@@ -31,7 +31,7 @@ export class CityComponent implements OnInit {
   ngOnInit() {}
 
   convert(kelvin) {
-    return Math.round((kelvin - 273) * (1.8) + 32);
+    return Math.round(kelvin - 273.5);
   }
 
   changeDesc(desc) {
